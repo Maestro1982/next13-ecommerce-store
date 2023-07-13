@@ -3,9 +3,12 @@ import { Category } from '@/types';
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/categories`;
 
 const getCategories = async (): Promise<Category[]> => {
-  const res = await fetch(URL, {
+  const cacheBuster = new Date().getTime(); // Unique value for cache-busting
+  const urlWithCacheBuster = `${URL}?_=${cacheBuster}`; // Append cache-buster to the URL
+
+  const res = await fetch(urlWithCacheBuster, {
     headers: {
-      'cache-control': 'no-cache',
+      'Cache-Control': 'no-store',
     },
   });
 
