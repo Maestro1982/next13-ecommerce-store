@@ -21,14 +21,17 @@ const getProducts = async (query: Query): Promise<Product[]> => {
       isFeatured: query.isFeatured,
     },
   });
-  const cacheBuster = new Date().getTime(); // Unique value for cache-busting
-  const urlWithCacheBuster = `${URL}?_=${cacheBuster}`; // Append cache-buster to the URL
+
+  /*  const cacheBuster = new Date().getTime(); // Unique value for cache-busting
+  const urlWithCacheBuster = `${url}?_=${cacheBuster}`; // Append cache-buster to the URL
 
   const res = await fetch(urlWithCacheBuster, {
     headers: {
       'Cache-Control': 'no-store',
     },
-  });
+  }); */
+
+  const res = await fetch(url);
 
   return res.json();
 };
