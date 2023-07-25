@@ -10,7 +10,7 @@ import Currency from '@/components/ui/currency';
 
 import useCart from '@/hooks/use-cart';
 
-const summary = () => {
+const Summary = () => {
   const searchParams = useSearchParams();
   const items = useCart((state) => state.items);
   const removeAllItems = useCart((state) => state.removeAllItems);
@@ -60,4 +60,4 @@ const summary = () => {
     </div>
   );
 };
-export default summary;
+export default Summary;
