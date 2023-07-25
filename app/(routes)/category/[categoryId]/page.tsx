@@ -3,7 +3,7 @@ import getColors from '@/actions/get-colors';
 import getProducts from '@/actions/get-products';
 import getSizes from '@/actions/get-sizes';
 
-import Billboard from '@/components/billboard';
+import Billboard from '@/components/ui/billboard';
 import Container from '@/components/ui/container';
 import NoResults from '@/components/ui/no-results';
 import ProductCard from '@/components/ui/product-card';
