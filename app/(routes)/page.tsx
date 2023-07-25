@@ -5,9 +5,6 @@ import Billboard from '@/components/ui/billboard';
 import ProductList from '@/components/product-list';
 import Container from '@/components/ui/container';
 
-// prevents data to being cached
-export const revalidation = 0;
-
 const HomePage = async () => {
   const billboard = await getBillboard('db758204-3638-482c-b73f-091cdc6d1e30');
   const products = await getProducts({ isFeatured: true });
